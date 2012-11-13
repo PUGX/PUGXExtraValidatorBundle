@@ -132,16 +132,6 @@ class ConstraintDateRangeTest extends \PHPUnit_Framework_TestCase
                 'maxDate'   => '+1 years',
                 'targetDate'=> new \DateTime('+1 days -1 years'),
             ),
-            array(
-                'minDate'   => '-1 years',
-                'maxDate'   => '+1 years',
-                'targetDate'=> new \DateTime('-1 years'),
-            ),
-            array(
-                'minDate'   => '-1 years',
-                'maxDate'   => '+1 years',
-                'targetDate'=> new \DateTime('+1 years'),
-            ),
         );
     }
 
