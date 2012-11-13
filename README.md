@@ -1,5 +1,6 @@
 PUGXExtraValidatorBundle
 =======================
+[![Build Status](https://secure.travis-ci.org/PUGX/PUGXExtraValidatorBundle.png?branch=2.1)](https://travis-ci.org/PUGX/PUGXExtraValidatorBundle)
 
 This bundle has a simple, specific purpose: adding extra validator for Symfony 2 Framework
 
