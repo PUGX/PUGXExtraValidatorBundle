@@ -1,0 +1,24 @@
+{
+    "name": "pugx/extravalidator-bundle",
+    "type": "symfony-bundle",
+    "description": "Add extra validators for forms",
+    "keywords": ["symfony2 form validator"],
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name":"Andrea Giuliano",
+            "email":"giulianoand@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "symfony/framework-bundle": "dev-master",
+        "symfony/form": "dev-master",
+        "symfony/validator": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "PUGX\\ExtraValidatorBundle": "" }
+    },
+    "target-dir": "PUGX/ExtraValidatorBundle"
+}
+
