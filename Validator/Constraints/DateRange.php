@@ -16,7 +16,7 @@ use Symfony\Component\Validator\Constraint;
 
 class DateRange extends Constraint
 {
-    public $message = 'Date must be between {{ min }} and {{ min }}.';
+    public $message = 'Date must be between {{ min }} and {{ max }}.';
     public $min;
     public $max;
 

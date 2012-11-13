@@ -20,7 +20,7 @@ Add the following lines in your composer.json:
 ```
 {
     "require": {
-        "pugx/extravalidator-bundle": "dev-master"
+        "pugx/extravalidator-bundle": "2.1.*"
     }
 }
 
@@ -44,7 +44,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new PUGX\PUGXExtraValidatorBundle(),
+        new PUGX\ExtraValidatorBundle\PUGXExtraValidatorBundle(),
     );
 }
 ```
@@ -54,7 +54,7 @@ public function registerBundles()
 In your Entity you must import the namespace:
 
 ```
-use PUGX\ExtraValidatorBundle\Validator\Constraints;
+use PUGX\ExtraValidatorBundle\Validator\Constraints as ExtraAssert;
 
 ```
 
@@ -63,7 +63,7 @@ in annotation of your property:
 
 ```
 /**
- * @DateRange(min="20-10-2012", max="+1 years")
+ * @ExtraAssert\DateRange(min="20-10-2012", max="+1 years")
  */
 protected $date;
 

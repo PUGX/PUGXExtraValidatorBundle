@@ -26,7 +26,7 @@ class ConstraintDateRangeTest extends \PHPUnit_Framework_TestCase
 
     public function testMinAndMaxIsValidDateFormat()
     {
-        $targetDate = mktime(0, 0, 0, date("m"), date("d"), date("Y"));
+        $targetDate = new \DateTime();
 
         $constraint = new DateRange(array(
             'min' => 'foo',
@@ -38,16 +38,16 @@ class ConstraintDateRangeTest extends \PHPUnit_Framework_TestCase
         $this->validator->validate($targetDate, $constraint);
     }
 
-    public function testNullIsNotValid()
+    public function testNullIsValid()
     {
-        $date    = mktime(0, 0, 0, date("m"), date("d"), date("Y"));
+        $date    = 'now';
 
         $constraint = new DateRange(array(
             'min' => $date,
             'max' => $date,
         ));
 
-        $this->context->expects($this->atLeastOnce())
+        $this->context->expects($this->never())
             ->method('addViolation');
 
         $this->validator->validate(null, $constraint);

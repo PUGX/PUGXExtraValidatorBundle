@@ -19,13 +19,11 @@ class DateRangeValidator extends ConstraintValidator
      */
     public function validate($value, Constraint $constraint)
     {
-
-        if (!strtotime($constraint->min) || !strtotime($constraint->min)) {
+        if (false === strtotime($constraint->min) || false === strtotime($constraint->min)) {
             $this->context->addViolation('min and/or max option must be valid date string');
             return false;
         }
-        if (!$value instanceof \DateTime) {
-            $this->context->addViolation('value must be a valid \Datetime');
+        if ($value == null || !$value instanceof \DateTime) {
             return false;
         }
 

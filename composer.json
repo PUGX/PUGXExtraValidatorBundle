@@ -12,9 +12,9 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "symfony/framework-bundle": "dev-master",
-        "symfony/form": "dev-master",
-        "symfony/validator": "dev-master"
+        "symfony/framework-bundle": "2.1.*",
+        "symfony/form": "2.1.*",
+        "symfony/validator": "2.1.*"
     },
     "autoload": {
         "psr-0": { "PUGX\\ExtraValidatorBundle": "" }
