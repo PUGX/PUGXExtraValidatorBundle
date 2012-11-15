@@ -37,7 +37,6 @@ $ php composer.phar update pugx/extravalidator-bundle
 Enable the bundle in the kernel:
 
 ``` php
-<?php
 // app/AppKernel.php
 
 public function registerBundles()
@@ -49,26 +48,12 @@ public function registerBundles()
 }
 ```
 
-### 3. Usage
+### 3. Validators
 
-In your Entity you must import the namespace:
 
-```
-use PUGX\ExtraValidatorBundle\Validator\Constraints as ExtraAssert;
+* ####Date Validators
 
-```
+	* [DateRange](/PUGX/PUGXExtraValidatorBundle/tree/master/Resources/doc/dateRange.md)
+	* [MinDate](/PUGX/PUGXExtraValidatorBundle/tree/master/Resources/doc/minDate.md)
+	* [MaxDate](/PUGX/PUGXExtraValidatorBundle/tree/master/Resources/doc/maxDate.md)
 
-After that you can use DateRangeValidator just writing relevant assert
-in annotation of your property:
-
-```
-/**
- * @ExtraAssert\DateRange(min="20-10-2012", max="+1 years")
- */
-protected $date;
-
-```
-
-Min and max options must be compliant to php documentation
-
-[Supported php Date and Time Formats]http://php.net/manual/en/datetime.formats.php
