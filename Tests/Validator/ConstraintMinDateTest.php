@@ -24,7 +24,7 @@ class ConstraintMinDateTest extends \PHPUnit_Framework_TestCase
         $this->validator = null;
     }
 
-    public function testAgeIsInteger()
+    public function testLimitIsValidDate()
     {
         $targetDate = new \DateTime("-24 years");
 
