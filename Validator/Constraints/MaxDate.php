@@ -1,9 +1,14 @@
 <?php
-/**
- * ConstraintMinDate.php
- * @author Andrea Giuliano <giulianoand@gmail.com>
- *        Date: 22/08/12
+
+/*
+ * This file is part of the ExtraValidatorBundle package.
+ *
+ * (c) Andrea Giuliano <giulianoand@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
+
 namespace PUGX\ExtraValidatorBundle\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
@@ -11,7 +16,6 @@ use Symfony\Component\Validator\Constraint;
 /**
  * @Annotation
  */
-
 class MaxDate extends Constraint
 {
     public $message = 'Date must be less than {{ limit }}.';
@@ -24,8 +28,4 @@ class MaxDate extends Constraint
     {
         return array('limit');
     }
-
-
-
-
 }

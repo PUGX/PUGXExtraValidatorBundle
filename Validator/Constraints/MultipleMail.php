@@ -1,8 +1,14 @@
 <?php
-/**
- * MultipleMail.php
- * @author Andrea Giuliano <giulianoand@gmail.com>
+
+/*
+ * This file is part of the ExtraValidatorBundle package.
+ *
+ * (c) Andrea Giuliano <giulianoand@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
+
 namespace PUGX\ExtraValidatorBundle\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
@@ -10,7 +16,6 @@ use Symfony\Component\Validator\Constraint;
 /**
  * @Annotation
  */
-
 class MultipleMail extends Constraint
 {
     public $message = 'Multiple mail must be separated by {{ separator }}';
@@ -23,8 +28,4 @@ class MultipleMail extends Constraint
     {
         return array('separator');
     }
-
-
-
-
 }

@@ -1,10 +1,18 @@
 <?php
 
+/*
+ * This file is part of the ExtraValidatorBundle package.
+ *
+ * (c) Andrea Giuliano <giulianoand@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace PUGX\ExtraValidatorBundle\Tests\Validator;
 
 use PUGX\ExtraValidatorBundle\Validator\Constraints\DateRangeValidator;
 use PUGX\ExtraValidatorBundle\Validator\Constraints\DateRange;
-
 
 class ConstraintDateRangeTest extends \PHPUnit_Framework_TestCase
 {
@@ -134,7 +142,4 @@ class ConstraintDateRangeTest extends \PHPUnit_Framework_TestCase
             ),
         );
     }
-
-
-
 }
