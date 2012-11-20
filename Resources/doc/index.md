@@ -58,3 +58,6 @@ public function registerBundles()
 	* [MinDate](/PUGX/PUGXExtraValidatorBundle/tree/master/Resources/doc/minDate.md)
 	* [MaxDate](/PUGX/PUGXExtraValidatorBundle/tree/master/Resources/doc/maxDate.md)
 
+* ####Mail Validator
+	* [MultipleMail](/PUGX/PUGXExtraValidatorBundle/tree/master/Resources/doc/multipleMail.md)
+
