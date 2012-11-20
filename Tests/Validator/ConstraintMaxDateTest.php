@@ -1,10 +1,18 @@
 <?php
 
+/*
+ * This file is part of the ExtraValidatorBundle package.
+ *
+ * (c) Andrea Giuliano <giulianoand@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace PUGX\ExtraValidatorBundle\Tests\Validator;
 
 use PUGX\ExtraValidatorBundle\Validator\Constraints\MaxDate;
 use PUGX\ExtraValidatorBundle\Validator\Constraints\MaxDateValidator;
-
 
 class ConstraintMaxDateTest extends \PHPUnit_Framework_TestCase
 {
@@ -96,6 +104,4 @@ class ConstraintMaxDateTest extends \PHPUnit_Framework_TestCase
             array(new \DateTime("-20 years")),
         );
     }
-
-
 }
