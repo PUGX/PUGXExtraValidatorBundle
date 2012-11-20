@@ -18,14 +18,5 @@ use Symfony\Component\Validator\Constraint;
  */
 class MultipleMail extends Constraint
 {
-    public $message = 'Multiple mail must be separated by {{ separator }}';
-    public $separator;
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getRequiredOptions()
-    {
-        return array('separator');
-    }
+    public $separator = ',';
 }

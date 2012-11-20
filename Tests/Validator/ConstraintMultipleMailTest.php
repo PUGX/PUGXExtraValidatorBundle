@@ -71,6 +71,9 @@ class ConstraintMultipleMailTest extends \PHPUnit_Framework_TestCase
                 'separator' => ','
             ),
             array(
+                'mail'      => 'foo@bar.com,info@example.com , chuck@norris.com',
+            ),
+            array(
                 'mail'      => 'foo@bar.com | info@example.com |chuck@norris.com',
                 'separator' => '|'
             ),
@@ -79,7 +82,7 @@ class ConstraintMultipleMailTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider getInvalidEmailWithSeparator
+     * @dataProvider getInvalidEmail
      */
     public function testInvalidEmail($data)
     {
@@ -93,7 +96,7 @@ class ConstraintMultipleMailTest extends \PHPUnit_Framework_TestCase
         $this->validator->validate($data['mail'], $constraint);
     }
 
-    public function getInvalidEmailWithSeparator()
+    public function getInvalidEmail()
     {
         return array(
             array(
@@ -103,6 +106,9 @@ class ConstraintMultipleMailTest extends \PHPUnit_Framework_TestCase
             array(
                 'mail'      => 'foo[at]bar.com,info#example.com',
                 'separator' => ','
+            ),
+            array(
+                'mail'      => 'foo@bar.com|info@example.com | chuck@norris.com',
             )
         );
     }
