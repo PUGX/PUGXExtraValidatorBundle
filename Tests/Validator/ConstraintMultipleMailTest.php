@@ -63,19 +63,22 @@ class ConstraintMultipleMailTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array(
-                'mail'      => 'foo@bar.com',
-                'separator' => ','
+                array(
+                    'mail'      => 'foo@bar.com',
+                    'separator' => ','
+                ),
             ),
             array(
-                'mail'      => 'foo@bar.com,info@example.com , chuck@norris.com',
-                'separator' => ','
+                array(
+                    'mail'      => 'foo@bar.com,info@example.com , chuck@norris.com',
+                    'separator' => ','
+                )
             ),
             array(
-                'mail'      => 'foo@bar.com,info@example.com , chuck@norris.com',
-            ),
-            array(
-                'mail'      => 'foo@bar.com | info@example.com |chuck@norris.com',
-                'separator' => '|'
+                array(
+                    'mail'      => 'foo@bar.com | info@example.com |chuck@norris.com',
+                    'separator' => '|'
+                )
             ),
         );
 
@@ -90,7 +93,7 @@ class ConstraintMultipleMailTest extends \PHPUnit_Framework_TestCase
             'separator' => $data['separator'],
         ));
 
-        $this->context->expects($this->never())
+        $this->context->expects($this->atLeastOnce())
             ->method('addViolation');
 
         $this->validator->validate($data['mail'], $constraint);
@@ -100,16 +103,17 @@ class ConstraintMultipleMailTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array(
-                'mail'      => 'foo[at]bar.com',
-                'separator' => ','
+                array(
+                    'mail'      => 'foo[at]bar.com',
+                    'separator' => ','
+                )
             ),
             array(
-                'mail'      => 'foo[at]bar.com,info#example.com',
-                'separator' => ','
+                array(
+                    'mail'      => 'foo[at]bar.com,info#example.com',
+                    'separator' => ','
+                )
             ),
-            array(
-                'mail'      => 'foo@bar.com|info@example.com | chuck@norris.com',
-            )
         );
     }
 
@@ -122,7 +126,7 @@ class ConstraintMultipleMailTest extends \PHPUnit_Framework_TestCase
             'separator' => $data['separator'],
         ));
 
-        $this->context->expects($this->never())
+        $this->context->expects($this->atLeastOnce())
             ->method('addViolation');
 
         $this->validator->validate($data['mail'], $constraint);
@@ -132,12 +136,16 @@ class ConstraintMultipleMailTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array(
-                'mail'      => 'foo@bar.com#info#example.com',
-                'separator' => '#'
+                array(
+                    'mail'      => 'foo@bar.com#info#example.com',
+                    'separator' => '#'
+                )
             ),
             array(
-                'mail'      => 'foo@bar.com,info@example.com',
-                'separator' => '|'
+                array(
+                    'mail'      => 'foo@bar.com,info@example.com',
+                    'separator' => '|'
+                )
             )
         );
     }
