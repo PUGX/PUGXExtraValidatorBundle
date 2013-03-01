@@ -10,11 +10,10 @@
             "email":"giulianoand@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
-        "symfony/framework-bundle": "dev-master",
-        "symfony/form": "dev-master",
-        "symfony/validator": "dev-master"
+        "symfony/framework-bundle": "2.2.*",
+        "symfony/form": "2.2.*",
+        "symfony/validator": "2.2.*"
     },
     "autoload": {
         "psr-0": { "PUGX\\ExtraValidatorBundle": "" }
