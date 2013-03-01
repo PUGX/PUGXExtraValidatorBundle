@@ -21,7 +21,7 @@ Use _"dev-master"_ or _"2.1.*"_ depending on which version of Symfony in your co
 ```
 {
     "require": {    
-        "pugx/extravalidator-bundle": "dev-master"
+        "pugx/extravalidator-bundle": "2.2.*"
     }
 }
 
