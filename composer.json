@@ -8,6 +8,10 @@
         {
             "name":"Andrea Giuliano",
             "email":"giulianoand@gmail.com"
+        },
+        {
+            "name": "Massimiliano Arione",
+            "email": "garakkio@gmail.com"
         }
     ],
     "minimum-stability": "dev",
