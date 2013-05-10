@@ -4,6 +4,7 @@
  * This file is part of the ExtraValidatorBundle package.
  *
  * (c) Massimiliano Arione <garakkio@gmail.com>
+ * (c) Andrea Giuliano <giulianoand@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -20,16 +21,17 @@ use Symfony\Component\Validator\Constraint;
  */
 class Compare extends Constraint
 {
-    public $message = '{{ from }} must be less than {{ to }}.';
+    public $message = '{{ from }} must be {{ comparator }} than {{ to }}.';
     public $from;
     public $to;
+    public $comparator;
 
     /**
      * {@inheritDoc}
      */
     public function getRequiredOptions()
     {
-        return array('from', 'to');
+        return array('from', 'to', 'comparator');
     }
 
     /**
