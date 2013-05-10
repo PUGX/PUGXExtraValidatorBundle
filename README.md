@@ -11,7 +11,7 @@ Documentation
 
 [Read the documentation for Symfony 2.1](https://github.com/PUGX/PUGXExtraValidatorBundle/blob/2.1/Resources/doc/index.md)
 
-[Read the documentation for Symfony 2.2](https://github.com/PUGX/PUGXExtraValidatorBundle/blob/v2.2/Resources/doc/index.md)
+[Read the documentation for Symfony 2.2](https://github.com/PUGX/PUGXExtraValidatorBundle/blob/v2.2.1/Resources/doc/index.md)
 
 Installation
 ------------
