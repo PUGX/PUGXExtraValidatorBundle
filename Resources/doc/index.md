@@ -61,3 +61,6 @@ public function registerBundles()
 * ####Mail Validator
 	* [MultipleMail](multipleMail.md)
 
+* ####Compare Validator
+	* [Compare](compare.md)
+
