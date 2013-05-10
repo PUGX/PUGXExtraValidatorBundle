@@ -17,11 +17,11 @@ This version of the bundle requires Symfony 2.1 or higher
 
 Add the following lines in your composer.json:
 
-Use _"dev-master"_ or _"2.1.*"_ depending on which version of Symfony in your composer.json 
+Use _"dev-master"_ or _"2.1.*"_ depending on which version of Symfony in your composer.json
 ```
 {
     "require": {    
-        "pugx/extravalidator-bundle": "dev-master"
+        "pugx/extravalidator-bundle": "2.2.*"
     }
 }
 
