@@ -4,6 +4,7 @@
  * This file is part of the ExtraValidatorBundle package.
  *
  * (c) Massimiliano Arione <garakkio@gmail.com>
+ * (c) Andrea Giuliano <giulianoand@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -34,7 +35,15 @@ class ConstraintCompareTest extends \PHPUnit_Framework_TestCase
 
     public function testValidValues()
     {
-        $object = new Stub1();
+        $object = $this->getMock("\\StdClass", array('getFrom', 'getTo'));
+        $object
+            ->expects($this->once())
+            ->method('getFrom')
+            ->will($this->returnValue(10));
+        $object
+            ->expects($this->once())
+            ->method('getTo')
+            ->will($this->returnValue(20));
 
         $constraint = new Compare(array(
             'from' => 'from',
@@ -48,7 +57,20 @@ class ConstraintCompareTest extends \PHPUnit_Framework_TestCase
 
     public function testInvalidValues()
     {
-        $object = new Stub2();
+        $object = $this->getMock("\\StdClass", array(
+            'getFrom',
+            'getTo',
+        ));
+
+        $object
+            ->expects($this->once())
+            ->method('getFrom')
+            ->will($this->returnValue(10));
+
+        $object
+            ->expects($this->once())
+            ->method('getFrom')
+            ->will($this->returnValue(12));
 
         $constraint = new Compare(array(
             'from' => 'from',
@@ -59,25 +81,5 @@ class ConstraintCompareTest extends \PHPUnit_Framework_TestCase
 
         $this->validator->validate($object, $constraint);
     }
-}
 
-class Stub1
-{
-    public function getFrom()
-    {
-        return 10;
-    }
-
-    public function getTo()
-    {
-        return 11;
-    }
-}
-
-class Stub2 extends Stub1
-{
-    public function getFrom()
-    {
-        return 12;
-    }
 }
