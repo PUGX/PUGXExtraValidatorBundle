@@ -13,24 +13,10 @@ This version of the bundle requires Symfony 2.1 or higher
 
 ### 1. Download PUGXExtraValidatorBundle
 
-**Using composer**
-
-Add the following lines in your composer.json:
-
-Use _"dev-master"_ or _"2.1.*"_ depending on which version of Symfony in your composer.json
-```
-{
-    "require": {    
-        "pugx/extravalidator-bundle": "2.2.*"
-    }
-}
-
-```
-
-Now, run the composer to download the bundle:
+Run from terminal:
 
 ``` bash
-$ php composer.phar update pugx/extravalidator-bundle
+$ php composer.phar require pugx/extravalidator-bundle:2.*
 ```
 
 ### 2. Enable the bundle
@@ -52,15 +38,14 @@ public function registerBundles()
 ### 3. Validators
 
 
-* ####Date Validators
+* #### Date Validators
 
 	* [DateRange](dateRange.md)
 	* [MinDate](minDate.md)
 	* [MaxDate](maxDate.md)
 
-* ####Mail Validator
+* #### Mail Validator
 	* [MultipleMail](multipleMail.md)
 
-* ####Compare Validator
+* #### Compare Validator
 	* [Compare](compare.md)
-
