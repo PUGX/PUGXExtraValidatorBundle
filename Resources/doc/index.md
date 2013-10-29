@@ -1,5 +1,5 @@
 PUGXExtraValidatorBundle Documentation
-=====================================
+======================================
 
 ## Prerequisites
 
