@@ -2,16 +2,17 @@ PUGXExtraValidatorBundle
 =======================
 [![Build Status](https://secure.travis-ci.org/PUGX/PUGXExtraValidatorBundle.png?branch=master)](https://travis-ci.org/PUGX/PUGXExtraValidatorBundle)
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/dd1ba711-fc3d-45d4-b9a5-2fde7b3db47e/big.png)](https://insight.sensiolabs.com/projects/dd1ba711-fc3d-45d4-b9a5-2fde7b3db47e)
+
 This bundle has a simple, specific purpose: adding extra validator for Symfony 2 Framework
 
 Documentation
 -------------
 
-[Read the documentation](Resources/doc/index.md)
+[Read the documentation form Symfony >= 2.2](Resources/doc/index.md)
 
 [Read the documentation for Symfony 2.1](https://github.com/PUGX/PUGXExtraValidatorBundle/blob/2.1/Resources/doc/index.md)
 
-[Read the documentation for Symfony 2.2](https://github.com/PUGX/PUGXExtraValidatorBundle/blob/v2.2.1/Resources/doc/index.md)
 
 Installation
 ------------

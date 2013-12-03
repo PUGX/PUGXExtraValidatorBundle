@@ -6,8 +6,8 @@
     "license": "LGPL-3.0+",
     "authors": [
         {
-            "name":"Andrea Giuliano",
-            "email":"giulianoand@gmail.com"
+            "name": "Andrea Giuliano",
+            "email": "giulianoand@gmail.com"
         },
         {
             "name": "Massimiliano Arione",
@@ -15,9 +15,9 @@
         }
     ],
     "require": {
-        "symfony/framework-bundle": "2.*",
-        "symfony/form": "2.*",
-        "symfony/validator": "2.*"
+        "symfony/framework-bundle": "~2.2",
+        "symfony/form": "~2.2",
+        "symfony/validator": "~2.2"
     },
     "autoload": {
         "psr-0": { "PUGX\\ExtraValidatorBundle": "" }
