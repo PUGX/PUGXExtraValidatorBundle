@@ -16,6 +16,7 @@ use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
+use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 /**
  * CompareValidator
@@ -25,17 +26,25 @@ class CompareValidator extends ConstraintValidator
     /**
      * {@inheritDoc}
      */
-    public function validate($object, Constraint $constraint)
+    public function validate($value, Constraint $constraint)
     {
         $fromMethod = 'get' . Container::camelize($constraint->from);
         $toMethod   = 'get' . Container::camelize($constraint->to);
         $compareMethod = 'is' . Container::camelize($constraint->comparator);
 
+        if (!is_object($value)) {
+            throw new UnexpectedTypeException($value, 'object');
+        }
+
+        if (!method_exists($value, $fromMethod) || !method_exists($value, $toMethod)) {
+            throw new ConstraintDefinitionException(sprintf("Method '%s' or method '%s' is not defined.", $fromMethod, $toMethod));
+        }
+
         if (!method_exists($this, $compareMethod)) {
             throw new ConstraintDefinitionException(sprintf("'%s' is not a valid comparator.", $constraint->comparator));
         }
 
-        if (!$this->$compareMethod($object->{$fromMethod}(), $object->{$toMethod}())) {
+        if (!$this->$compareMethod($value->{$fromMethod}(), $value->{$toMethod}())) {
             $this->context->addViolation($constraint->message, array(
                 '{{ from }}'        => $constraint->from,
                 '{{ to }}'          => $constraint->to,

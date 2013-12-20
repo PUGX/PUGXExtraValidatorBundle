@@ -52,6 +52,36 @@ class ConstraintCompareTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @expectedException \Symfony\Component\Validator\Exception\UnexpectedTypeException
+     */
+    public function testInvalidObjectShouldThrowsException()
+    {
+        $string = 'bar';
+
+        $constraint = new Compare(array(
+            'from' => 'from',
+            'to'   => 'to',
+            'comparator' => 'foo'
+        ));
+
+        $this->validator->validate($string, $constraint);
+    }
+
+    /**
+     * @expectedException \Symfony\Component\Validator\Exception\ConstraintDefinitionException
+     */
+    public function testNotFoundMethodShouldThrowsException()
+    {
+        $constraint = new Compare(array(
+            'from' => 'from',
+            'to'   => 'to',
+            'comparator' => 'foo'
+        ));
+
+        $this->validator->validate($this->object, $constraint);
+    }
+
+    /**
      * @dataProvider getValidValues
      */
     public function testValidValues($value)
