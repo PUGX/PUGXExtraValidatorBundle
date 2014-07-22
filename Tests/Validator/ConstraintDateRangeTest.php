@@ -61,7 +61,6 @@ class ConstraintDateRangeTest extends \PHPUnit_Framework_TestCase
         $this->validator->validate(null, $constraint);
     }
 
-
     /**
      * @dataProvider getDateOutOfRange
      */

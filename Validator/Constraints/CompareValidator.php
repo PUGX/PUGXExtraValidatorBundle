@@ -73,11 +73,13 @@ class CompareValidator extends ConstraintValidator
         return ($from >= $to);
     }
 
-    protected function isEqual($from, $to) {
+    protected function isEqual($from, $to)
+    {
         return ($from == $to);
     }
 
-    protected function isDifferent($from, $to) {
+    protected function isDifferent($from, $to)
+    {
         return ($from != $to);
     }
 }

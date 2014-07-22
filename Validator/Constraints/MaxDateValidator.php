@@ -21,24 +21,23 @@ class MaxDateValidator extends ConstraintValidator
      */
     public function validate($value, Constraint $constraint)
     {
-        if (!$value instanceof \DateTime)
-        {
+        if (!$value instanceof \DateTime) {
             return false;
         }
 
-        if (false === strtotime($constraint->limit))
-        {
+        if (false === strtotime($constraint->limit)) {
             $this->context->addViolation('limit option must be valid date string');
+
             return false;
         }
 
         $limit = new \DateTime($constraint->limit);
 
-        if ($limit < $value)
-        {
+        if ($limit < $value) {
             $this->context->addViolation($constraint->message, array(
                 '{{ limit }}' => $constraint->limit,
             ));
+
             return false;
         }
 

@@ -22,18 +22,17 @@ class MultipleMailValidator extends EmailValidator
      */
     public function validate($value, Constraint $constraint)
     {
-        if (null === $value || '' === $value)
-        {
+        if (null === $value || '' === $value) {
             return false;
         }
 
         $addresses = explode($constraint->separator, $value);
 
-        foreach($addresses as $address)
-        {
+        foreach ($addresses as $address) {
             $mail = trim($address);
             parent::validate($mail, new Email());
         }
+
         return true;
     }
 }
