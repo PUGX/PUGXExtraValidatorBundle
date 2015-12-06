@@ -22,7 +22,7 @@ class MinDate extends Constraint
     public $limit;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getRequiredOptions()
     {

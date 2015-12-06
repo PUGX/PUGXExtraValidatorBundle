@@ -34,10 +34,10 @@ class ConstraintMinDateTest extends \PHPUnit_Framework_TestCase
 
     public function testLimitIsValidDate()
     {
-        $targetDate = new \DateTime("-24 years");
+        $targetDate = new \DateTime('-24 years');
 
         $constraint = new MinDate(array(
-            'limit' => "foo",
+            'limit' => 'foo',
         ));
         $this->context->expects($this->atLeastOnce())
             ->method('addViolation');
@@ -75,9 +75,9 @@ class ConstraintMinDateTest extends \PHPUnit_Framework_TestCase
     public function getDateValid()
     {
         return array(
-            array(new \DateTime("-10 years")),
+            array(new \DateTime('-10 years')),
             array(new \DateTime()),
-            array(new \DateTime("-18 years +1 days")),
+            array(new \DateTime('-18 years +1 days')),
         );
     }
 
@@ -99,9 +99,9 @@ class ConstraintMinDateTest extends \PHPUnit_Framework_TestCase
     public function getDateInvalid()
     {
         return array(
-            array(new \DateTime("-18 years -1 days")),//18 years and 1 day
-            array(new \DateTime("-18 years -1 minutes")),
-            array(new \DateTime("-20 years")),
+            array(new \DateTime('-18 years -1 days')), //18 years and 1 day
+            array(new \DateTime('-18 years -1 minutes')),
+            array(new \DateTime('-20 years')),
         );
     }
 }

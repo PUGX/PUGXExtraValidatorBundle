@@ -12,8 +12,8 @@
 
 namespace PUGX\ExtraValidatorBundle\Tests\Validator;
 
-use PUGX\ExtraValidatorBundle\Validator\Constraints\CompareValidator;
 use PUGX\ExtraValidatorBundle\Validator\Constraints\Compare;
+use PUGX\ExtraValidatorBundle\Validator\Constraints\CompareValidator;
 
 class ConstraintCompareTest extends \PHPUnit_Framework_TestCase
 {
@@ -25,7 +25,7 @@ class ConstraintCompareTest extends \PHPUnit_Framework_TestCase
         $this->context = $this->getMock('Symfony\Component\Validator\ExecutionContext', array(), array(), '', false);
         $this->validator = new CompareValidator();
         $this->validator->initialize($this->context);
-        $this->object = $this->getMock("\\StdClass", array('getFrom', 'getTo'));
+        $this->object = $this->getMock('\\StdClass', array('getFrom', 'getTo'));
     }
 
     /**
@@ -44,8 +44,8 @@ class ConstraintCompareTest extends \PHPUnit_Framework_TestCase
 
         $constraint = new Compare(array(
             'from' => 'from',
-            'to'   => 'to',
-            'comparator' => 'foo'
+            'to' => 'to',
+            'comparator' => 'foo',
         ));
 
         $this->validator->validate($this->object, $constraint);
@@ -60,8 +60,8 @@ class ConstraintCompareTest extends \PHPUnit_Framework_TestCase
 
         $constraint = new Compare(array(
             'from' => 'from',
-            'to'   => 'to',
-            'comparator' => 'foo'
+            'to' => 'to',
+            'comparator' => 'foo',
         ));
 
         $this->validator->validate($string, $constraint);
@@ -74,8 +74,8 @@ class ConstraintCompareTest extends \PHPUnit_Framework_TestCase
     {
         $constraint = new Compare(array(
             'from' => 'from',
-            'to'   => 'to',
-            'comparator' => 'foo'
+            'to' => 'to',
+            'comparator' => 'foo',
         ));
 
         $this->validator->validate($this->object, $constraint);
@@ -97,8 +97,8 @@ class ConstraintCompareTest extends \PHPUnit_Framework_TestCase
 
         $constraint = new Compare(array(
             'from' => 'from',
-            'to'   => 'to',
-            'comparator' => $value['comparator']
+            'to' => 'to',
+            'comparator' => $value['comparator'],
         ));
 
         $this->context->expects($this->never())->method('addViolation');
@@ -123,8 +123,8 @@ class ConstraintCompareTest extends \PHPUnit_Framework_TestCase
 
         $constraint = new Compare(array(
             'from' => 'from',
-            'to'   => 'to',
-            'comparator' => $value['comparator']
+            'to' => 'to',
+            'comparator' => $value['comparator'],
         ));
 
         $this->context->expects($this->once())->method('addViolation');
@@ -137,59 +137,59 @@ class ConstraintCompareTest extends \PHPUnit_Framework_TestCase
         return array(
             array(
                 array(
-                    'from'          => 10,
-                    'comparator'    => 'less',
-                    'to'            => 20,
-                )
+                    'from' => 10,
+                    'comparator' => 'less',
+                    'to' => 20,
+                ),
             ),
             array(
                 array(
-                    'from'          => 10,
-                    'comparator'    => 'equal',
-                    'to'            => 10,
-                )
+                    'from' => 10,
+                    'comparator' => 'equal',
+                    'to' => 10,
+                ),
             ),
             array(
                 array(
-                    'from'          => 10,
-                    'comparator'    => 'less_equal',
-                    'to'            => 12,
-                )
+                    'from' => 10,
+                    'comparator' => 'less_equal',
+                    'to' => 12,
+                ),
             ),
             array(
                 array(
-                    'from'          => 30,
-                    'comparator'    => 'greater',
-                    'to'            => 20,
-                )
+                    'from' => 30,
+                    'comparator' => 'greater',
+                    'to' => 20,
+                ),
             ),
             array(
                 array(
-                    'from'          => 10,
-                    'comparator'    => 'greater_equal',
-                    'to'            => 10,
-                )
+                    'from' => 10,
+                    'comparator' => 'greater_equal',
+                    'to' => 10,
+                ),
             ),
             array(
                 array(
-                    'from'          => 'foo',
-                    'comparator'    => 'different',
-                    'to'            => 'bar',
-                )
+                    'from' => 'foo',
+                    'comparator' => 'different',
+                    'to' => 'bar',
+                ),
             ),
             array(
                 array(
-                    'from'          => 'foo',
-                    'comparator'    => 'equal',
-                    'to'            => 'foo',
-                )
+                    'from' => 'foo',
+                    'comparator' => 'equal',
+                    'to' => 'foo',
+                ),
             ),
             array(
                 array(
-                    'from'          => new \stdClass(),
-                    'comparator'    => 'equal',
-                    'to'            => new \stdClass(),
-                )
+                    'from' => new \stdClass(),
+                    'comparator' => 'equal',
+                    'to' => new \stdClass(),
+                ),
             ),
         );
     }
@@ -199,66 +199,66 @@ class ConstraintCompareTest extends \PHPUnit_Framework_TestCase
         return array(
             array(
                 array(
-                    'from'          => 10,
-                    'comparator'    => 'greater',
-                    'to'            => 20,
-                )
+                    'from' => 10,
+                    'comparator' => 'greater',
+                    'to' => 20,
+                ),
             ),
             array(
                 array(
-                    'from'          => 10,
-                    'comparator'    => 'greater',
-                    'to'            => 10,
-                )
+                    'from' => 10,
+                    'comparator' => 'greater',
+                    'to' => 10,
+                ),
             ),
             array(
                 array(
-                    'from'          => 9,
-                    'comparator'    => 'greater_equal',
-                    'to'            => 10,
-                )
+                    'from' => 9,
+                    'comparator' => 'greater_equal',
+                    'to' => 10,
+                ),
             ),
             array(
                 array(
-                    'from'          => 12,
-                    'comparator'    => 'less',
-                    'to'            => 10,
-                )
+                    'from' => 12,
+                    'comparator' => 'less',
+                    'to' => 10,
+                ),
             ),
             array(
                 array(
-                    'from'          => 12,
-                    'comparator'    => 'less_equal',
-                    'to'            => 10,
-                )
+                    'from' => 12,
+                    'comparator' => 'less_equal',
+                    'to' => 10,
+                ),
             ),
             array(
                 array(
-                    'from'          => 10,
-                    'comparator'    => 'equal',
-                    'to'            => 12,
-                )
+                    'from' => 10,
+                    'comparator' => 'equal',
+                    'to' => 12,
+                ),
             ),
             array(
                 array(
-                    'from'          => 'foo',
-                    'comparator'    => 'equal',
-                    'to'            => 'bar',
-                )
+                    'from' => 'foo',
+                    'comparator' => 'equal',
+                    'to' => 'bar',
+                ),
             ),
             array(
                 array(
-                    'from'          => 'foo',
-                    'comparator'    => 'different',
-                    'to'            => 'foo',
-                )
+                    'from' => 'foo',
+                    'comparator' => 'different',
+                    'to' => 'foo',
+                ),
             ),
             array(
                 array(
-                    'from'          => new \stdClass(),
-                    'comparator'    => 'different',
-                    'to'            => new \stdClass(),
-                )
+                    'from' => new \stdClass(),
+                    'comparator' => 'different',
+                    'to' => new \stdClass(),
+                ),
             ),
         );
     }

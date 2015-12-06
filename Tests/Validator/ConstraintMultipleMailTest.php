@@ -64,24 +64,23 @@ class ConstraintMultipleMailTest extends \PHPUnit_Framework_TestCase
         return array(
             array(
                 array(
-                    'mail'      => 'foo@bar.com',
-                    'separator' => ','
+                    'mail' => 'foo@bar.com',
+                    'separator' => ',',
                 ),
             ),
             array(
                 array(
-                    'mail'      => 'foo@bar.com,info@example.com , chuck@norris.com',
-                    'separator' => ','
-                )
+                    'mail' => 'foo@bar.com,info@example.com , chuck@norris.com',
+                    'separator' => ',',
+                ),
             ),
             array(
                 array(
-                    'mail'      => 'foo@bar.com | info@example.com |chuck@norris.com',
-                    'separator' => '|'
-                )
+                    'mail' => 'foo@bar.com | info@example.com |chuck@norris.com',
+                    'separator' => '|',
+                ),
             ),
         );
-
     }
 
     /**
@@ -104,15 +103,15 @@ class ConstraintMultipleMailTest extends \PHPUnit_Framework_TestCase
         return array(
             array(
                 array(
-                    'mail'      => 'foo[at]bar.com',
-                    'separator' => ','
-                )
+                    'mail' => 'foo[at]bar.com',
+                    'separator' => ',',
+                ),
             ),
             array(
                 array(
-                    'mail'      => 'foo[at]bar.com,info#example.com',
-                    'separator' => ','
-                )
+                    'mail' => 'foo[at]bar.com,info#example.com',
+                    'separator' => ',',
+                ),
             ),
         );
     }
@@ -137,16 +136,16 @@ class ConstraintMultipleMailTest extends \PHPUnit_Framework_TestCase
         return array(
             array(
                 array(
-                    'mail'      => 'foo@bar.com#info#example.com',
-                    'separator' => '#'
-                )
+                    'mail' => 'foo@bar.com#info#example.com',
+                    'separator' => '#',
+                ),
             ),
             array(
                 array(
-                    'mail'      => 'foo@bar.com,info@example.com',
-                    'separator' => '|'
-                )
-            )
+                    'mail' => 'foo@bar.com,info@example.com',
+                    'separator' => '|',
+                ),
+            ),
         );
     }
 }

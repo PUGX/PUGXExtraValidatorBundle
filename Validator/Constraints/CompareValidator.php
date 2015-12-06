@@ -19,18 +19,18 @@ use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 /**
- * CompareValidator
+ * CompareValidator.
  */
 class CompareValidator extends ConstraintValidator
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function validate($value, Constraint $constraint)
     {
-        $fromMethod = 'get' . Container::camelize($constraint->from);
-        $toMethod   = 'get' . Container::camelize($constraint->to);
-        $compareMethod = 'is' . Container::camelize($constraint->comparator);
+        $fromMethod = 'get'.Container::camelize($constraint->from);
+        $toMethod = 'get'.Container::camelize($constraint->to);
+        $compareMethod = 'is'.Container::camelize($constraint->comparator);
 
         if (!is_object($value)) {
             throw new UnexpectedTypeException($value, 'object');
@@ -46,40 +46,40 @@ class CompareValidator extends ConstraintValidator
 
         if (!$this->$compareMethod($value->{$fromMethod}(), $value->{$toMethod}())) {
             $this->context->addViolation($constraint->message, array(
-                '{{ from }}'        => $constraint->from,
-                '{{ to }}'          => $constraint->to,
-                '{{ comparator }}'  => $constraint->comparator,
+                '{{ from }}' => $constraint->from,
+                '{{ to }}' => $constraint->to,
+                '{{ comparator }}' => $constraint->comparator,
             ));
         }
     }
 
     protected function isLess($from, $to)
     {
-        return ($from < $to);
+        return $from < $to;
     }
 
     protected function isLessEqual($from, $to)
     {
-        return ($from <= $to);
+        return $from <= $to;
     }
 
     protected function isGreater($from, $to)
     {
-        return ($from > $to);
+        return $from > $to;
     }
 
     protected function isGreaterEqual($from, $to)
     {
-        return ($from >= $to);
+        return $from >= $to;
     }
 
     protected function isEqual($from, $to)
     {
-        return ($from == $to);
+        return $from == $to;
     }
 
     protected function isDifferent($from, $to)
     {
-        return ($from != $to);
+        return $from != $to;
     }
 }

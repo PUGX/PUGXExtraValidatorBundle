@@ -17,7 +17,7 @@ use Symfony\Component\Validator\ConstraintValidator;
 class MinDateValidator extends ConstraintValidator
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function validate($value, Constraint $constraint)
     {

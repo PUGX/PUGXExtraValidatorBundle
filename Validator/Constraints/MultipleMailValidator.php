@@ -18,7 +18,7 @@ use Symfony\Component\Validator\Constraints\EmailValidator;
 class MultipleMailValidator extends EmailValidator
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function validate($value, Constraint $constraint)
     {
