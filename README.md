@@ -6,6 +6,10 @@ PUGXExtraValidatorBundle
 
 This bundle has a simple, specific purpose: adding extra validator for Symfony 2 Framework
 
+> This package is abandoned and no longer maintained.
+> It was useful for Symfony 2.3, that is now out of support. For Symfony 2.7 and later, you can use the built-in
+> functionalities. See also http://symfony.com/blog/new-in-symfony-2-6-date-support-for-validator-constraints.
+
 Documentation
 -------------
 
