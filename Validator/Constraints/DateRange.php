@@ -23,11 +23,10 @@ class DateRange extends Constraint
     public $max;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getRequiredOptions()
     {
         return array('min', 'max');
     }
-
 }

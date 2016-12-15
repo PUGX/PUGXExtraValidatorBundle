@@ -11,8 +11,8 @@
 
 namespace PUGX\ExtraValidatorBundle\Tests\Validator;
 
-use PUGX\ExtraValidatorBundle\Validator\Constraints\DateRangeValidator;
 use PUGX\ExtraValidatorBundle\Validator\Constraints\DateRange;
+use PUGX\ExtraValidatorBundle\Validator\Constraints\DateRangeValidator;
 
 class ConstraintDateRangeTest extends \PHPUnit_Framework_TestCase
 {
@@ -48,7 +48,7 @@ class ConstraintDateRangeTest extends \PHPUnit_Framework_TestCase
 
     public function testNullIsValid()
     {
-        $date    = 'now';
+        $date = 'now';
 
         $constraint = new DateRange(array(
             'min' => $date,
@@ -75,33 +75,32 @@ class ConstraintDateRangeTest extends \PHPUnit_Framework_TestCase
             ->method('addViolation');
 
         $this->validator->validate($targetDate, $constraint);
-
     }
 
     public function getDateOutOfRange()
     {
         return array(
             array(
-                'minDate'   => '-1 years',
-                'maxDate'   => '+1 years',
-                'targetDate'=> new \DateTime('+2 years'),
+                'minDate' => '-1 years',
+                'maxDate' => '+1 years',
+                'targetDate' => new \DateTime('+2 years'),
             ),
 
             array(
-                'minDate'   => '-1 years',
-                'maxDate'   => '+1 years',
-                'targetDate'=> new \DateTime('-2 years'),
+                'minDate' => '-1 years',
+                'maxDate' => '+1 years',
+                'targetDate' => new \DateTime('-2 years'),
             ),
             array(
-                'minDate'   => '-1 years',
-                'maxDate'   => '+1 years',
-                'targetDate'=> new \DateTime('+1 days +1 years'),
+                'minDate' => '-1 years',
+                'maxDate' => '+1 years',
+                'targetDate' => new \DateTime('+1 days +1 years'),
             ),
             array(
-                'minDate'   => '-1 years',
-                'maxDate'   => '+1 years',
-                'targetDate'=> new \DateTime('-1 days -1 years'),
-            )
+                'minDate' => '-1 years',
+                'maxDate' => '+1 years',
+                'targetDate' => new \DateTime('-1 days -1 years'),
+            ),
         );
     }
 
@@ -125,19 +124,19 @@ class ConstraintDateRangeTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array(
-                'minDate'   => '-1 years',
-                'maxDate'   => '+1 years',
-                'targetDate'=> new \DateTime(''),
+                'minDate' => '-1 years',
+                'maxDate' => '+1 years',
+                'targetDate' => new \DateTime(''),
             ),
             array(
-                'minDate'   => '-1 years',
-                'maxDate'   => '+1 years',
-                'targetDate'=> new \DateTime('-1 days +1 years'),
+                'minDate' => '-1 years',
+                'maxDate' => '+1 years',
+                'targetDate' => new \DateTime('-1 days +1 years'),
             ),
             array(
-                'minDate'   => '-1 years',
-                'maxDate'   => '+1 years',
-                'targetDate'=> new \DateTime('+1 days -1 years'),
+                'minDate' => '-1 years',
+                'maxDate' => '+1 years',
+                'targetDate' => new \DateTime('+1 days -1 years'),
             ),
         );
     }

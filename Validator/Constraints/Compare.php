@@ -15,7 +15,7 @@ namespace PUGX\ExtraValidatorBundle\Validator\Constraints;
 use Symfony\Component\Validator\Constraint;
 
 /**
- * Compare
+ * Compare.
  *
  * @Annotation
  */
@@ -27,7 +27,7 @@ class Compare extends Constraint
     public $comparator;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getRequiredOptions()
     {
@@ -35,7 +35,7 @@ class Compare extends Constraint
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getDefaultOption()
     {
@@ -43,7 +43,7 @@ class Compare extends Constraint
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getTargets()
     {
