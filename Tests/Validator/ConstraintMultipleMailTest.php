@@ -143,7 +143,7 @@ class ConstraintMultipleMailTest extends \PHPUnit_Framework_TestCase
             ),
             array(
                 array(
-                    'mail'      => 'foo@bar.com,info@example.com',
+                    'mail'      => 'foo@bar.com,info|example.com',
                     'separator' => '|'
                 )
             )
